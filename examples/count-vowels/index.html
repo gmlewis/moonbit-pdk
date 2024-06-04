@@ -7,7 +7,7 @@
   <script type="module">
     import { configs, flush, importObject, inputString } from '/assets/simulatedExtismSdk.js'
 
-    const wasmUnderTest = '/target/wasm/release/build/examples/count-vowels/count-vowels.wasm'
+    const wasmUnderTest = '/target/wasm-gc/release/build/examples/count-vowels/count-vowels.wasm'
 
     // WebAssembly.instantiateStreaming(fetch("/target/wasm-gc/release/build/examples/count-vowels/count-vowels.wasm"), importObject).then(
     WebAssembly.instantiateStreaming(fetch(wasmUnderTest), importObject).then(
