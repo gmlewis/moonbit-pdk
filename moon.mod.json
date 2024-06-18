@@ -1,6 +1,6 @@
 {
   "name": "gmlewis/moonbit-pdk",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "deps": {
     "gmlewis/json": "0.7.0"
   },
