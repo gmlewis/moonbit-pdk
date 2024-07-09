@@ -38,6 +38,14 @@ jobs:
           moon version --all
           moonrun --version
 
+      - name: moon update
+        run: |
+          moon update
+
+      - name: moon install
+        run: |
+          moon install
+
       - name: moon check
         run: moon check --deny-warn
 
