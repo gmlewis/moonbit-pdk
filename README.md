@@ -238,11 +238,8 @@ export your `add` function in `main/moon.pkg.json`:
 {
   "is-main": true,
   "import": [
-    "gmlewis/moonbit-pdk/pdk/host",
-    {
-      "path": "gmlewis/json",
-      "alias": "jsonutil"
-    }
+    "gmlewis/jsonutil",
+    "gmlewis/moonbit-pdk/pdk/host"
   ],
   "link": {
     "wasm": {
