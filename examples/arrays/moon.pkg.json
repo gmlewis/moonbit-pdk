@@ -1,6 +1,5 @@
 {
   "import": [
-    "gmlewis/jsonutil",
     "gmlewis/moonbit-pdk/pdk/config",
     "gmlewis/moonbit-pdk/pdk/host",
     "gmlewis/moonbit-pdk/pdk/var"
