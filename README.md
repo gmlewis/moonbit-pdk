@@ -34,11 +34,15 @@ You can find the reference documentation for this library on [mooncakes.io]:
 
 Examples can also be found there:
 
+* [gmlewis/moonbit-pdk/examples/add]
+* [gmlewis/moonbit-pdk/examples/arrays]
 * [gmlewis/moonbit-pdk/examples/count-vowels]
 * [gmlewis/moonbit-pdk/examples/greet]
 * [gmlewis/moonbit-pdk/examples/http-get]
 * [gmlewis/moonbit-pdk/examples/kitchen-sink]
 
+[gmlewis/moonbit-pdk/examples/add]: https://mooncakes.io/docs/#/gmlewis/moonbit-pdk/examples/add/members
+[gmlewis/moonbit-pdk/examples/arrays]: https://mooncakes.io/docs/#/gmlewis/moonbit-pdk/examples/arrays/members
 [gmlewis/moonbit-pdk/examples/count-vowels]: https://mooncakes.io/docs/#/gmlewis/moonbit-pdk/examples/count-vowels/members
 [gmlewis/moonbit-pdk/examples/greet]: https://mooncakes.io/docs/#/gmlewis/moonbit-pdk/examples/greet/members
 [gmlewis/moonbit-pdk/examples/http-get]: https://mooncakes.io/docs/#/gmlewis/moonbit-pdk/examples/http-get/members
@@ -91,7 +95,6 @@ and include the `@host` import into your plugin:
 
 ```json
 {
-  "is-main": true,
   "import": [
     "gmlewis/moonbit-pdk/pdk/host"
   ],
@@ -175,27 +178,36 @@ struct Add {
 }
 
 pub fn Add::from_json(value : @json.JsonValue) -> Add? {
-  let value = value.as_object()?
-  let a = value.get("a")?.as_number()
-  let b = value.get("b")?.as_number()
+  let value = match value.as_object() {
+    Some(v) => v
+    _ => return None
+  }
+  let a = match value.get("a") {
+    Some(v) => v
+    _ => return None
+  }
+  let a = a.as_number()
+  let b = match value.get("b") {
+    Some(v) => v
+    _ => return None
+  }
+  let b = b.as_number()
   match (a, b) {
     (Some(a), Some(b)) => Some({ a: a.to_int(), b: b.to_int() })
     _ => None
   }
 }
 
-pub fn Add::parse(s : String) -> Add!String {
-  match @json.parse(s)!! {
+type! ParseError String derive(Show)
+
+pub fn Add::parse(s : String) -> Add!ParseError {
+  match @json.parse?(s) {
     Ok(jv) =>
       match Add::from_json(jv) {
         Some(value) => value
-        None => {
-          raise "unable to parse Add \{s}"
-        }
+        None => raise ParseError("unable to parse Add \{s}")
       }
-    Err(e) => {
-      raise "unable to parse Add \{s}: \{e}"
-    }
+    Err(e) => raise ParseError("unable to parse Add \{s}: \{e}")
   }
 }
 
@@ -203,16 +215,16 @@ struct Sum {
   sum : Int
 }
 
-pub fn to_json(self: Sum) -> Json {
+pub fn to_json(self : Sum) -> Json {
   { "sum": self.sum.to_json() }
 }
 
 pub fn add() -> Int {
   let input = @host.input_string()
   let params = try {
-    Add::parse(input)!
+    Add::parse!(input)
   } catch {
-    e => {
+    ParseError(e) => {
       @host.set_error(e)
       return 1
     }
@@ -230,7 +242,6 @@ Export your `add` function in `main/moon.pkg.json`:
 
 ```json
 {
-  "is-main": true,
   "import": [
     "gmlewis/moonbit-pdk/pdk/host"
   ],
@@ -281,7 +292,6 @@ export your function:
 
 ```json
 {
-  "is-main": true,
   "import": [
     "gmlewis/moonbit-pdk/pdk/config",
     "gmlewis/moonbit-pdk/pdk/host"
@@ -335,7 +345,6 @@ export your function:
 
 ```json
 {
-  "is-main": true,
   "import": [
     "gmlewis/moonbit-pdk/pdk/host",
     "gmlewis/moonbit-pdk/pdk/var"
