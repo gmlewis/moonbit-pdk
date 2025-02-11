@@ -1,0 +1,17 @@
+package gmlewis/moonbit-pdk/pdk/config
+
+alias @gmlewis/moonbit-pdk/pdk/host as @host
+
+// Values
+fn get(String) -> String?
+
+fn get_memory(String) -> @host.Memory?
+
+// Types and methods
+pub(all) struct Config {
+}
+
+// Type aliases
+
+// Traits
+
