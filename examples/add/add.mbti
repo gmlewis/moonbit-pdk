@@ -1,4 +1,4 @@
-package gmlewis/moonbit-pdk/examples/add
+package "gmlewis/moonbit-pdk/examples/add"
 
 // Values
 fn add() -> Int

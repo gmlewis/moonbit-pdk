@@ -1,4 +1,4 @@
-package gmlewis/moonbit-pdk/pdk/host
+package "gmlewis/moonbit-pdk/pdk/host"
 
 // Values
 fn allocate(Int64) -> Memory

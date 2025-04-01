@@ -1,6 +1,8 @@
-package gmlewis/moonbit-pdk/pdk/var
+package "gmlewis/moonbit-pdk/pdk/var"
 
-alias @gmlewis/moonbit-pdk/pdk/host as @host
+import(
+  "gmlewis/moonbit-pdk/pdk/host"
+)
 
 // Values
 fn get_bytes(String) -> Bytes?

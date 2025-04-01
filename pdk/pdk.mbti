@@ -1,4 +1,4 @@
-package gmlewis/moonbit-pdk/pdk
+package "gmlewis/moonbit-pdk/pdk"
 
 // Values
 

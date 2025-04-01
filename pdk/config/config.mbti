@@ -1,6 +1,8 @@
-package gmlewis/moonbit-pdk/pdk/config
+package "gmlewis/moonbit-pdk/pdk/config"
 
-alias @gmlewis/moonbit-pdk/pdk/host as @host
+import(
+  "gmlewis/moonbit-pdk/pdk/host"
+)
 
 // Values
 fn get(String) -> String?

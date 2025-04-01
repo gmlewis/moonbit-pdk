@@ -1,4 +1,4 @@
-package gmlewis/moonbit-pdk/pdk/extism
+package "gmlewis/moonbit-pdk/pdk/extism"
 
 // Values
 fn alloc(Int64) -> Int64

@@ -1,4 +1,4 @@
-package gmlewis/moonbit-pdk/examples/kitchen-sink
+package "gmlewis/moonbit-pdk/examples/kitchen-sink"
 
 // Values
 fn kitchen_sink() -> Int

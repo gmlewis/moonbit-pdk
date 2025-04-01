@@ -1,4 +1,4 @@
-package gmlewis/moonbit-pdk/examples/http-get
+package "gmlewis/moonbit-pdk/examples/http-get"
 
 // Values
 fn http_get() -> Int
