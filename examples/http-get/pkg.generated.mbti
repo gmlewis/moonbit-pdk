@@ -2,7 +2,7 @@
 package "gmlewis/moonbit-pdk/examples/http-get"
 
 // Values
-fn http_get() -> Int
+pub fn http_get() -> Int
 
 // Errors
 
