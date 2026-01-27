@@ -1,0 +1,5 @@
+import {
+  "gmlewis/moonbit-pdk/pdk",
+  "gmlewis/moonbit-pdk/pdk/extism",
+  "moonbitlang/core/builtin",
+}

@@ -1,9 +1,9 @@
 // Generated using `moon info`, DON'T EDIT IT
 package "gmlewis/moonbit-pdk/pdk/var"
 
-import(
-  "gmlewis/moonbit-pdk/pdk/host"
-)
+import {
+  "gmlewis/moonbit-pdk/pdk/host",
+}
 
 // Values
 pub fn get_bytes(String) -> Bytes?

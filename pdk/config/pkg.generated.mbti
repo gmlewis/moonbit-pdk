@@ -1,9 +1,9 @@
 // Generated using `moon info`, DON'T EDIT IT
 package "gmlewis/moonbit-pdk/pdk/config"
 
-import(
-  "gmlewis/moonbit-pdk/pdk/host"
-)
+import {
+  "gmlewis/moonbit-pdk/pdk/host",
+}
 
 // Values
 pub fn get(String) -> String?

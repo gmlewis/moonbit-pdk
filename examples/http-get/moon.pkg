@@ -1,0 +1,11 @@
+import {
+  "gmlewis/moonbit-pdk/pdk/http",
+  "moonbitlang/core/builtin",
+}
+
+options(
+  link: {
+    "wasm": { "export-memory-name": "memory", "exports": [ "http_get" ] },
+    "wasm-gc": { "export-memory-name": "memory", "exports": [ "http_get" ] },
+  },
+)

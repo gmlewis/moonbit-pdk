@@ -1,0 +1,13 @@
+import {
+  "gmlewis/moonbit-pdk/pdk/config",
+  "gmlewis/moonbit-pdk/pdk/host",
+  "gmlewis/moonbit-pdk/pdk/var",
+  "moonbitlang/core/builtin",
+}
+
+options(
+  link: {
+    "wasm": { "export-memory-name": "memory", "exports": [ "count_vowels" ] },
+    "wasm-gc": { "export-memory-name": "memory", "exports": [ "count_vowels" ] },
+  },
+)

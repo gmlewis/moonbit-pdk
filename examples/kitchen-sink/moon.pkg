@@ -1,0 +1,14 @@
+import {
+  "gmlewis/moonbit-pdk/pdk/config",
+  "gmlewis/moonbit-pdk/pdk/http",
+  "gmlewis/moonbit-pdk/pdk/host",
+  "gmlewis/moonbit-pdk/pdk/var",
+  "moonbitlang/core/builtin",
+}
+
+options(
+  link: {
+    "wasm": { "export-memory-name": "memory", "exports": [ "kitchen_sink" ] },
+    "wasm-gc": { "export-memory-name": "memory", "exports": [ "kitchen_sink" ] },
+  },
+)
