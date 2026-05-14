@@ -1,6 +1,7 @@
 import {
   "gmlewis/moonbit-pdk/pdk/host",
   "moonbitlang/core/builtin",
+  "moonbitlang/core/debug",
   "moonbitlang/core/json",
 }
 
