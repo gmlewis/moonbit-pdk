@@ -48,7 +48,7 @@ test "Header::add" {
 ///|
 test "Header::to_json works as expected" {
   let header : Header = { "key1": "one", "key2": "two" }
-  let got = header.to_json().stringify()
+  let got = ToJson::to_json(header).stringify()
   let want =
     #|{"key1":"one","key2":"two"}
   inspect(got, content=want)
