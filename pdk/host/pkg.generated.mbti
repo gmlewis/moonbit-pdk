@@ -48,4 +48,3 @@ pub fn Memory::to_string(Self) -> String
 // Type aliases
 
 // Traits
-

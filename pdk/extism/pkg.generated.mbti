@@ -51,4 +51,3 @@ pub fn var_set(Int64, Int64) -> Unit
 // Type aliases
 
 // Traits
-
