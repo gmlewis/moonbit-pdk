@@ -11,4 +11,3 @@ pub fn http_get() -> Int
 // Type aliases
 
 // Traits
-

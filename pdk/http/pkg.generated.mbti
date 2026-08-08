@@ -47,4 +47,3 @@ pub fn Response::output(Self) -> Unit
 // Type aliases
 
 // Traits
-

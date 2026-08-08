@@ -19,4 +19,3 @@ pub(open) trait ToUtf8 {
   fn to_utf8(Self) -> Bytes
 }
 pub impl ToUtf8 for String
-
