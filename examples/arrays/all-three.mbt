@@ -7,6 +7,9 @@ pub(all) struct AllThree {
 } derive(Debug, Eq, ToJson)
 
 ///|
+extend AllThree with ToJson::{to_json}
+
+///|
 /// `process_all_three` processes all three array types.
 pub fn process_all_three(all3 : AllThree) -> AllThree {
   {

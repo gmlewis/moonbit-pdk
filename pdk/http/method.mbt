@@ -42,5 +42,5 @@ pub impl Show for Method with fn output(self, logger) {
 ///|
 /// `Method::to_json` is required because `derive(ToJson)` generates `{"$tag":"GET"}` here instead of `"GET"`.
 pub impl ToJson for Method with fn to_json(self) {
-  self.to_string().to_json()
+  Show::to_string(self).to_json()
 }

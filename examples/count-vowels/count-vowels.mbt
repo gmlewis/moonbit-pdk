@@ -12,6 +12,9 @@ pub(all) struct VowelReport {
 } derive(Eq, ToJson)
 
 ///|
+extend VowelReport with ToJson::{to_json}
+
+///|
 pub impl Show for VowelReport with fn output(self, logger) {
   logger.write_string(
     (

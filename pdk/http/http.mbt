@@ -7,6 +7,9 @@ pub(all) struct Request {
 } derive(ToJson)
 
 ///|
+extend Request with ToJson::{to_json}
+
+///|
 /// `Response` represents an HTTP response from the Extism host.
 pub(all) struct Response {
   status_code : Int
