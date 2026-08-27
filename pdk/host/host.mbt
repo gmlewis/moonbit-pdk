@@ -23,7 +23,7 @@ fn output_bytes_to_memory(b : Bytes) -> Memory {
   for i = 0; i < length.to_int(); i = i + 1 {
     @extism.store_u8(offset + i.to_int64(), b[i])
   }
-  { offset, length }
+  { offset, length, }
 }
 
 ///|
