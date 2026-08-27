@@ -55,13 +55,13 @@ pub fn count_vowels() -> Int {
   let total = get_total() + count
   store_total(total)
   //
-  { count, total, vowels }.to_json() |> @host.output_json_value()
+  { count, total, vowels, }.to_json() |> @host.output_json_value()
   0 // success
 }
 
 ///|
 test "VowelReport::to_json works as expected" {
-  let vowel_report = { count: 1, total: 2, vowels: "some string" }
+  let vowel_report = { count: 1, total: 2, vowels: "some string", }
   let got = vowel_report.to_json().stringify()
   let want =
     #|{"count":1,"total":2,"vowels":"some string"}

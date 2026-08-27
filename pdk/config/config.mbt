@@ -16,7 +16,7 @@ pub fn get_memory(key : String) -> @host.Memory? {
   if length == 0L {
     return None
   }
-  Some({ offset, length })
+  Some({ offset, length, })
 }
 
 ///|

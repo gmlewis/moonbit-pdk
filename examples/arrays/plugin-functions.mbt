@@ -108,7 +108,7 @@ pub fn all_three_object() -> Int {
         .map(fn(n) { as_string(n) })
         .filter(fn(n) { !(n is None) })
         .map(fn(n) { n.unwrap() })
-      { ints, floats, strings }
+      { ints, floats, strings, }
     }
     _ => {
       @host.set_error("unable to parse input: \{s}")

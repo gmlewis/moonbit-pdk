@@ -1,6 +1,6 @@
 name = "extism/moonbit-pdk"
 
-version = "0.47.29"
+version = "0.47.30"
 
 readme = "README.md"
 

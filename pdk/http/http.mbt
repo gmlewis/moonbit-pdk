@@ -21,7 +21,7 @@ pub(all) struct Response {
 /// `method` and `url`.
 pub fn new_request(http_method : Method, url : String) -> Request {
   let header = Header::new()
-  { http_method, header, url }
+  { http_method, header, url, }
 }
 
 ///|
@@ -52,7 +52,7 @@ pub fn Request::send(self : Request, body? : @host.Memory? = None) -> Response {
     offset: response_offset,
     length: response_length,
   }
-  { status_code, body: response_body }
+  { status_code, body: response_body, }
 }
 
 ///|

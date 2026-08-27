@@ -10,7 +10,7 @@ pub(all) struct Memory {
 /// `find_memory` returns a `Memory` struct from an offset provided by the host.
 pub fn find_memory(offset : Int64) -> Memory {
   let length = @extism.length(offset)
-  { offset, length }
+  { offset, length, }
 }
 
 ///|
@@ -23,7 +23,7 @@ pub fn Memory::free(self : Memory) -> Unit {
 /// `allocate` allocates an uninitialized (determined by host)
 /// area of shared memory on the host.
 pub fn allocate(length : Int64) -> Memory {
-  { offset: @extism.alloc(length), length }
+  { offset: @extism.alloc(length), length, }
 }
 
 ///|
@@ -35,7 +35,7 @@ pub fn allocate_bytes(bytes : Bytes) -> Memory {
   for i in 0L..<length {
     @extism.store_u8(offset + i, bytes[i.to_int()])
   }
-  { offset, length }
+  { offset, length, }
 }
 
 ///|
