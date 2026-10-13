@@ -1,6 +1,6 @@
 name = "gmlewis/moonbit-pdk"
 
-version = "0.47.32"
+version = "0.47.33"
 
 readme = "README.md"
 
