@@ -2,7 +2,7 @@
 package "gmlewis/moonbit-pdk/examples/greet"
 
 // Values
-pub fn greet() -> Int
+pub fn greet() -> Int32
 
 // Errors
 

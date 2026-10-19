@@ -2,7 +2,7 @@
 package "gmlewis/moonbit-pdk/examples/kitchen-sink"
 
 // Values
-pub fn kitchen_sink() -> Int
+pub fn kitchen_sink() -> Int32
 
 // Errors
 
