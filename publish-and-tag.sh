@@ -127,6 +127,7 @@ if [[ -n "$published_version" ]] &&
         commit_message="Update dependencies and generated files"
       fi
       note "Committing ./update.sh changes: $commit_message"
+      git diff master > diffs1
       git commit -sam "$commit_message"
     fi
     git push origin HEAD
@@ -158,6 +159,7 @@ note "Refreshing sibling dependencies with ~/tools/bin/update-moonbit-deps ..."
 "$HOME/tools/bin/update-moonbit-deps"
 
 note "Committing the release ..."
+git diff master > diffs2
 git commit -sam "Bump version to $new_version"
 
 git push origin HEAD
